@@ -37,7 +37,7 @@ the complexity of the model.
 Here is an example of a traffic sign image before and after grayscaling.
 
 
-[image1]:./color_gray.png
+[image1]:./sign_2.jpg
 
 As a last step, I normalized the image data because ...
 
