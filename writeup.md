@@ -1,3 +1,7 @@
+
+[//]: # (Image References)
+[image1]:./color_gray.png
+
 **Traffic Sign Recognition**
 ---
 
@@ -14,7 +18,7 @@ The goals / steps of this project are the following:
 
 **Rubric Points**
 
-This document describes the Traffic Sign Recognition project, and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+This document describes the Traffic Sign Recognition project, and here is a link to my [project code](https://github.com/Walpro/CarND-Traffic-Sign-Classifier/blob/master/Traffic_Sign_Classifier.ipynb)
 
 Data Set Summary & Exploration
 
@@ -35,9 +39,8 @@ factor in determining the nature of the road sign also this conversion helps to 
 the complexity of the model.
 
 Here is an example of a traffic sign image before and after grayscaling.
-[//]:
 
-[image1]:./color_gray.png
+![color to gray_scale][image1]
 
 As a last step, I normalized the image data because ...
 
