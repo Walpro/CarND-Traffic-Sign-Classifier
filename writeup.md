@@ -35,9 +35,9 @@ factor in determining the nature of the road sign also this conversion helps to 
 the complexity of the model.
 
 Here is an example of a traffic sign image before and after grayscaling.
+[//]:
 
-
-[image1]:./sign_2.jpg
+[image1]:./color_gray.png
 
 As a last step, I normalized the image data because ...
 
