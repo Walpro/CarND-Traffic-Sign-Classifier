@@ -1,4 +1,4 @@
-
+ 
 [//]: # (Image References)
 [image1]:./color_gray.png
 [image2]:./sign_2.jpg
@@ -50,8 +50,6 @@ Here is an example of a traffic sign image before and after grayscaling.
 I have also normalized the image data to reduce the fluctuation of the input
 and to get more plausible values in the caculation of the gradiant.
 
-
-####2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 I used the Lenet5 convulutional neural network 
 My final model consisted of the following layers:
 
@@ -67,16 +65,13 @@ My final model consisted of the following layers:
 | Fully connected		|      									|
 |  RELU					|												|
 |Fully connected		|      									|
- 
 
-
-####3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
 To train the model, I used an Adam optimizer with a learning rate of  0.001 and 70 epochs.
 
 I tried different learning rates and epochs values to reach the desired values.
 I have started also with colored images and a depth 3 model and changed to gray scale and 
-depth 1 model after not being able to reach 93%.
+depth 1 model after not being able to reach 93% validation accuracy.
 
 My final model results were:
 * validation set accuracy of 93.5% 
@@ -92,39 +87,40 @@ Here are five German traffic signs that I found on the web:
 The last image might be difficult to classify because it is turned around 
 and not the whole sign shape is present.
 
-####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
-
 Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| speed limt (50km/h)      		| speed limt (50km/h)   									| 
+| Priority road     			| Priority road 									|
+| Dangerous curve to the left					| No passing for vehicles over 3.5 metric tons											|
+| Trafic signals      		| General caution					 				|
+| Wild animals crossing			| speed limt (20km/h)      							|
 
 
 The model was able to correctly guess 2 of the 5 traffic signs, which gives an accuracy of 40%.
-The 
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
 The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+For the first image, the model is pretty sure that this is a speed limt (50km/h) (probability of 1), and the image does contain a a speed limt (50km/h) . 
+
+For the second image, the model is sure that this is a Priority road (probability of 0.99), and the image does contain a Priority road. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| 0.99%       			| Priority road								| 
+|  7.46120668e-06    				| Ahead only									|
+| 3.68073074e-06 					| Yield											|
+| 1.23104476e-15      			| No passing		 				|
+| 1.23104476e-15			    |  Trafic signals      							|
 
+For the rest of the images the model is not anymore sure which raod sign the image contains, and this translates to the softmac probabilities for exemple for the dangerous curve to the left	image the five softmax probabilites were:
 
-For the second image ... 
-
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
-####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
-
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 7.32850313e-01       			| No passing for vehicles over 3.5 metric tons									| 
+| 2.67149687e-01   				| dangerous curve to the left							|
+| 4.97967864e-16 					| Road work											|
+| 2.19870795e-20      			| slippery road	 				|
+| 1.24141159e-27	    |  right-of-weight at the next interstection      							|
 
