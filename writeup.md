@@ -50,7 +50,7 @@ Here is an example of a traffic sign image before and after grayscaling.
 I have also normalized the image data to reduce the fluctuation of the input
 and to get more plausible values in the caculation of the gradiant.
 
-I used the Lenet5 convulutional neural network 
+the selected architecture I used the Lenet5 convulutional neural network 
 My final model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
@@ -67,11 +67,17 @@ My final model consisted of the following layers:
 |Fully connected		|      									|
 
 
-To train the model, I used an Adam optimizer with a learning rate of  0.001 and 70 epochs.
 
-I tried different learning rates and epochs values to reach the desired values.
-I have started also with colored images and a depth 3 model and changed to gray scale and 
-depth 1 model after not being able to reach 93% validation accuracy.
+
+The first architecture I used was a LENET convulutional neural network with an input depth of 3, it was at first selected because of its ability to learn from images by capturing the caractristics of them through different analysis and hints deduced in the learning process from each layer.
+The initial architecture was complex due to the input depth which confused the model with images color and made it not able to reach the desired accuracy, the model was over to the training dataset and an important accuracy difference was observed between the validation and testing dataset.
+
+To avoid letting the model try to learn from the image colors which is not an important propriety of road signs images, the model depth was reduced to 1 which reduced as well the complexity of the model and the model layers sizes are also adjusted.
+
+I tried different learning rates to tune the importance of each learning step.
+I also started with reduced number of epochs to have a first idea of the model accuracy and when the first values were promising I increased the values and evaluated the outcomes.
+
+an Adam optimizer was used and the final learning rate is  0.001 and the number of epochs is 70 .
 
 My final model results were:
 * validation set accuracy of 93.5% 
@@ -99,6 +105,8 @@ Here are the results of the prediction:
 
 
 The model was able to correctly guess 2 of the 5 traffic signs, which gives an accuracy of 40%.
+The accuracy on the images from the web is 40% while it was 92.7 on the testing set thus  the model seems to be overfitting
+to the training, testing and validation images, it shows also that the used dataset is not enough and does not capture all the possible variations of sign road images.
 
 The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
 
