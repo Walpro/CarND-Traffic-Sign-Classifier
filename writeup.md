@@ -106,7 +106,7 @@ Here are the results of the prediction:
 
 The model was able to correctly guess 2 of the 5 traffic signs, which gives an accuracy of 40%.
 The accuracy on the images from the web is 40% while it was 92.7 on the testing set thus  the model seems to be overfitting
-to the training, testing and validation images, it shows also that the used dataset is not enough and does not capture all the possible variations of sign road images.
+to the training dataset it shows also that the used dataset does not have enough variation and does not capture all the possible variations of sign road images.
 
 The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
 
